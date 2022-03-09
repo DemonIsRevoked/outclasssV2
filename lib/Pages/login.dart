@@ -2,6 +2,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:form_field_validator/form_field_validator.dart';
+import 'package:get/get.dart';
 import 'package:outclassv3/CommonPage/multi_dashboard.dart';
 import 'package:outclassv3/Services/authentication.dart';
 import 'package:outclassv3/Services/colorses.dart';
@@ -50,9 +51,7 @@ class _LoginState extends State<Login> {
         .get()
         .then((DocumentSnapshot dsr) => email = dsr.get('email'));
     auth.signInWithEmailAndPassword(email: email, password: password.text).then((value) {
-      Navigator.pushReplacement(context,
-        MaterialPageRoute(builder: (context) =>  Dashboard()),
-      );
+      Get.off(const Dashboard());
     });
   }
 

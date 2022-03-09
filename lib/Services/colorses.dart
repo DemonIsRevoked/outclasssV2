@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../CommonPage/profile.dart';
 import 'authentication.dart';
@@ -47,7 +48,7 @@ Widget drawerDes(BuildContext context){
           ),
           ListTile(
             onTap: () {
-              Navigator.pop(context);
+              Get.back();
             },
             leading: Icon(
               Icons.home,
@@ -63,8 +64,7 @@ Widget drawerDes(BuildContext context){
           ),
           GestureDetector(
             onTap: () {
-              Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (context) => General()));
+              Get.to(const General());
             },
             child: ListTile(
               leading: Icon(

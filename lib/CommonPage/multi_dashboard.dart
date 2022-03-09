@@ -7,6 +7,7 @@ import 'package:get/get_instance/src/extension_instance.dart';
 import 'package:outclassv3/Navigation/canteen.dart';
 import 'package:outclassv3/Navigation/shoping.dart';
 import 'package:outclassv3/Services/authentication.dart';
+
 import '../Navigation/classPageStu.dart';
 import '../Navigation/classPageTech.dart';
 import '../Navigation/clubStud.dart';
@@ -14,17 +15,6 @@ import '../Navigation/home.dart';
 import '../Services/colorses.dart';
 
 final DataController controller = Get.find();
-
-page(){
-  if (controller.userProfileData['role'] == 'STUD'){
-    print(controller.userProfileData['role']);
-
-  }
-  else{
-    print('Failed Test');
-
-  }
-}
 
 class Dashboard extends StatefulWidget {
   const Dashboard({Key? key}) : super(key: key);

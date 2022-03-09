@@ -14,17 +14,18 @@ List<Category> categoriesList=[
 
 
 class Categories extends StatelessWidget {
-const Categories();
+ const Categories();
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       physics: const BouncingScrollPhysics(),
       child: SizedBox(
           height: 100,
-          child:ListView.builder(
+          child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: categoriesList.length,
-              itemBuilder: (_, index){
+              itemBuilder: (_, index) {
                 return Padding(
                   padding: const EdgeInsets.fromLTRB(11.0,9.0,9.0,9.0),
                   child: Column(

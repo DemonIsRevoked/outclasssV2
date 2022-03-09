@@ -1,13 +1,12 @@
 
 
 
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:outclassv3/Pages/welcom.dart';
-import 'package:outclassv3/CommonPage/multi_dashboard.dart';
 import 'package:get/get.dart';
-
+import 'package:outclassv3/CommonPage/multi_dashboard.dart';
+import 'package:outclassv3/Pages/welcom.dart';
 
 final auth = FirebaseAuth.instance;
 final store = FirebaseFirestore.instance;
@@ -49,10 +48,7 @@ class UserInstanceManagement {
 
   handleSignOut(BuildContext context) {
     auth.signOut();
-    Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(builder: (context) =>  const WelcomePages()),
-    );
+    Get.off(const WelcomePages());
   }
 
 }

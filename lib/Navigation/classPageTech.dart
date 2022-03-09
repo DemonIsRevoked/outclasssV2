@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-import '../Services/colorses.dart';
 import '../CommonPage/notification.dart';
-
+import '../Services/colorses.dart';
 
 class ClassTech extends StatefulWidget {
   const ClassTech({Key? key}) : super(key: key);
@@ -47,28 +47,25 @@ class _ClassTechState extends State<ClassTech> {
                 color: appBarItems,
               ),
               onPressed: () {
-                Navigator.push(
-                  context,
-                  PageRouteBuilder(
-                      transitionDuration: const Duration(milliseconds: 350),
-                      transitionsBuilder: (BuildContext context,
-                          Animation<double> animation,
-                          Animation<double> secAnimation,
-                          Widget child) {
-                        animation = CurvedAnimation(
-                            parent: animation, curve: Curves.easeInOutCirc);
-                        return ScaleTransition(
-                          alignment: Alignment.topRight,
-                          scale: animation,
-                          child: child,
-                        );
-                      },
-                      pageBuilder: (BuildContext context,
-                          Animation<double> animation,
-                          Animation<double> secAnimation) {
-                        return const NotificationPage();
-                      }),
-                );
+                Get.to(PageRouteBuilder(
+                    transitionDuration: const Duration(milliseconds: 350),
+                    transitionsBuilder: (BuildContext context,
+                        Animation<double> animation,
+                        Animation<double> secAnimation,
+                        Widget child) {
+                      animation = CurvedAnimation(
+                          parent: animation, curve: Curves.easeInOutCirc);
+                      return ScaleTransition(
+                        alignment: Alignment.topRight,
+                        scale: animation,
+                        child: child,
+                      );
+                    },
+                    pageBuilder: (BuildContext context,
+                        Animation<double> animation,
+                        Animation<double> secAnimation) {
+                      return const NotificationPage();
+                    }));
               }),
         ],
       ),
@@ -86,7 +83,7 @@ class ClassCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16.0),
+      padding: const EdgeInsets.symmetric(horizontal: 16.0),
       child: Card(
         child: Padding(
           padding: const EdgeInsets.symmetric(

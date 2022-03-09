@@ -14,7 +14,7 @@ class CustomTitle extends StatelessWidget {
   final Color colors;
   final FontWeight weight;
 
-  CustomTitle({
+   CustomTitle({
     required this.title,
     required this.size,
     required this.colors,
